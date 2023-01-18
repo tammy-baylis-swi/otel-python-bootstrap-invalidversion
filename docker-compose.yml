@@ -1,0 +1,30 @@
+# Example runs:
+# docker-compose run --rm py3.7-install-ubuntu18.04
+# docker-compose run --rm py3.10-install-ubuntu20.04
+
+services:
+  py3.7-install-ubuntu18.04:
+    hostname: "py3.7-ubuntu18.04"
+    image: "ubuntu:18.04"
+    volumes:
+      - ./app.py:/app.py
+      - ./run_flask.sh:/run_flask.sh
+    command: sh run_flask.sh
+
+  py3.10-install-ubuntu20.04:
+    hostname: "py3.10-ubuntu20.04"
+    image: "ubuntu:20.04"
+    volumes:
+      - ./app.py:/app.py
+      - ./run_flask.sh:/run_flask.sh
+    command: sh run_flask.sh
+
+  py3.10-install-ubuntu20.04-old-setuptools:
+    hostname: "py3.10-ubuntu20.04"
+    image: "ubuntu:20.04"
+    volumes:
+      - ./app.py:/app.py
+      - ./run_flask.sh:/run_flask.sh
+    environment:
+      - OLD_SETUPTOOLS=1
+    command: sh run_flask.sh
