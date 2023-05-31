@@ -11,6 +11,14 @@ services:
       - ./run_flask.sh:/run_flask.sh
     command: sh run_flask.sh
 
+  py3.10-install-ubuntu18.04:
+    hostname: "py3.10-ubuntu18.04"
+    image: "ubuntu:18.04"
+    volumes:
+      - ./app.py:/app.py
+      - ./run_flask.sh:/run_flask.sh
+    command: sh run_flask.sh
+
   py3.10-install-ubuntu20.04:
     hostname: "py3.10-ubuntu20.04"
     image: "ubuntu:20.04"
@@ -27,4 +35,12 @@ services:
       - ./run_flask.sh:/run_flask.sh
     environment:
       - OLD_SETUPTOOLS=1
+    command: sh run_flask.sh
+
+  py3.11-install-ubuntu20.04:
+    hostname: "py3.11-ubuntu20.04"
+    image: "ubuntu:20.04"
+    volumes:
+      - ./app.py:/app.py
+      - ./run_flask.sh:/run_flask.sh
     command: sh run_flask.sh
