@@ -13,6 +13,8 @@ Sample code to reproduce `opentelemetry-bootstrap` setuptools/pkg_resources erro
 
 ### InvalidError
 
+_May 31 2023:_ This no longer results in InvalidError.
+
 Run opentelemetry-bootstrap with Python 3.10 on Ubuntu 20.04:
 `docker-compose run --rm py3.10-install-ubuntu20.04`
 
